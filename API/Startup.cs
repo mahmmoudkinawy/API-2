@@ -28,6 +28,8 @@ namespace API
 
             services.AddScoped<IBlogRepository, BlogRepository>();
 
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
