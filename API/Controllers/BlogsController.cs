@@ -4,6 +4,7 @@ using API.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace API.Controllers
@@ -21,6 +22,26 @@ namespace API.Controllers
                 throw new ArgumentNullException(nameof(repository));
             _mapper = mapper ??
                 throw new ArgumentNullException(nameof(mapper));
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<BlogDto>>> GetAllBlogs()
+        {
+            var blogs = await _repository.GetAllBlogAsync();
+
+            return Ok(_mapper.Map<IEnumerable<BlogDto>>(blogs));
+        }
+
+        [HttpGet]
+        [Route("{id:int}")]
+        public async Task<ActionResult<BlogDto>> GetBlog(int id)
+        {
+            var blog = await _repository.GetBlogAsync(id);
+
+            if (blog == null)
+                return NotFound();
+
+            return Ok(_mapper.Map<BlogDto>(blog));
         }
 
         [HttpPost]

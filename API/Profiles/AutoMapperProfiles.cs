@@ -9,6 +9,7 @@ namespace API.Profiles
         public AutoMapperProfiles()
         {
             CreateMap<BlogCreateDto, Blog>();
+            CreateMap<Blog, BlogDto>();
         }
     }
 }

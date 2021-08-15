@@ -3,6 +3,8 @@ using API.Entities;
 using API.Interfaces;
 using System.Threading.Tasks;
 using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Repositories
 {
@@ -15,7 +17,14 @@ namespace API.Repositories
             _context = context ??
                 throw new ArgumentNullException(nameof(context));
         }
-
+        public async Task<IEnumerable<Blog>> GetAllBlogAsync()
+        {
+            return await _context.Blogs.ToListAsync();
+        }
+        public async Task<Blog> GetBlogAsync(int id)
+        {
+            return await _context.Blogs.FindAsync(id);
+        }
         public async Task CreateBlogAsync(Blog blog)
         {
             await _context.Blogs.AddAsync(blog);
