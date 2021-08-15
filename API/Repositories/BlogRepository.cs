@@ -29,7 +29,10 @@ namespace API.Repositories
         {
             await _context.Blogs.AddAsync(blog);
         }
-
+        public void UpdateBlog(Blog blog)
+        {
+            _context.Entry(blog).State = EntityState.Modified;
+        }
         public void DeleteBlog(Blog blog)
         {
             _context.Blogs.Remove(blog);
@@ -48,7 +51,7 @@ namespace API.Repositories
 
         protected virtual void Dispose(bool disposing)
         {
-            if(disposing)
+            if (disposing)
             {
                 if (_context != null)
                 {
