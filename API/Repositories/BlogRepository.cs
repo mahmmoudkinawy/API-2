@@ -30,6 +30,11 @@ namespace API.Repositories
             await _context.Blogs.AddAsync(blog);
         }
 
+        public void DeleteBlog(Blog blog)
+        {
+            _context.Blogs.Remove(blog);
+        }
+
         public async Task<bool> SaveChangesAsync()
         {
             return (await _context.SaveChangesAsync() > 0);

@@ -33,7 +33,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        [Route("{id:int}")]
+        [Route("{id:int}", Name = "GetABlog")]
         public async Task<ActionResult<BlogDto>> GetBlog(int id)
         {
             var blog = await _repository.GetBlogAsync(id);
@@ -56,6 +56,21 @@ namespace API.Controllers
             await _repository.SaveChangesAsync();
 
             return Ok("Created Successfully");
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public async Task<ActionResult> DeleteBlog(int id)
+        {
+            var blog = await _repository.GetBlogAsync(id);
+
+            if (blog == null)
+                return NotFound();
+
+            _repository.DeleteBlog(blog);
+            await _repository.SaveChangesAsync();
+
+            return Ok("Deleted Successfully");
         }
     }
 }

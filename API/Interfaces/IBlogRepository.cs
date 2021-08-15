@@ -9,6 +9,7 @@ namespace API.Interfaces
         Task<IEnumerable<Blog>> GetAllBlogAsync();
         Task<Blog> GetBlogAsync(int id);
         Task CreateBlogAsync(Blog blog);
+        void DeleteBlog(Blog blog);
         Task<bool> SaveChangesAsync();
     }
 }
