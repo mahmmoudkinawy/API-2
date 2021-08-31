@@ -2,6 +2,7 @@
 using API.Entities;
 using API.Interfaces;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace API.Controllers
                 throw new ArgumentNullException(nameof(mapper));
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<BlogDto>>> GetAllBlogs()
         {
@@ -30,6 +32,7 @@ namespace API.Controllers
             return Ok(_mapper.Map<IEnumerable<BlogDto>>(blogs));
         }
 
+        [Authorize]
         [HttpGet]
         [Route("{id:int}")]
         public async Task<ActionResult<BlogDto>> GetBlog(int id)
