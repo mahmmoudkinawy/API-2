@@ -9,9 +9,7 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/Blogs")]
-    public class BlogsController : ControllerBase
+    public class BlogsController : BaseApiController
     {
         private readonly IBlogRepository _repository;
         private readonly IMapper _mapper;
