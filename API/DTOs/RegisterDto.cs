@@ -2,7 +2,7 @@
 
 namespace API.DTOs.Users
 {
-    public class RegisterDto : BaseLogin
+    public class RegisterDto : BaseEntity
     {
         [EmailAddress]
         public string Email { get; set; }

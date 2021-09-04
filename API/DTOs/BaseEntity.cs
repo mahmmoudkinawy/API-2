@@ -2,7 +2,7 @@
 
 namespace API.DTOs
 {
-    public class BaseLogin
+    public class BaseEntity
     {
         [Required]
         public string Username { get; set; }
