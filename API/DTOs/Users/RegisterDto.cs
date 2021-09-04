@@ -2,12 +2,9 @@
 
 namespace API.DTOs.Users
 {
-    public class RegisterDto
+    public class RegisterDto : BaseLogin
     {
-        [Required]
-        public string Username { get; set; }
-
-        [Required]
-        public string Password { get; set; }
+        [EmailAddress]
+        public string Email { get; set; }
     }
 }

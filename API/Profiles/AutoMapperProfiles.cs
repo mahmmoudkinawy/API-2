@@ -10,7 +10,10 @@ namespace API.Profiles
         {
             CreateMap<BlogCreateDto, Blog>();
             CreateMap<BlogUpdateDto, Blog>();
+
             CreateMap<Blog, BlogDto>();
+
+            CreateMap<AppUser, MemberDto>();
         }
     }
 }

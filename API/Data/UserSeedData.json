@@ -1,6 +1,7 @@
 [
   {
     "UserName": "kino",
+    "Email" : "kino@gmail.com",
     "Blogs": [
       {
         "Title": "It and supplies 1",
@@ -21,6 +22,7 @@
   },
   {
     "UserName": "Khokha",
+    "Email": "khokha@gmail.com",
     "Blogs": [
       {
         "Title": "With it same on one 1",

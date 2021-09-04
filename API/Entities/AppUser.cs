@@ -14,6 +14,8 @@ namespace API.Entities
 
         public byte[] PasswordSalt { get; set; }
 
+        public string Email { get; set; }
+
         //Relationship one to many === AppUser to Blogs
         public ICollection<Blog> Blogs { get; set; }
     }

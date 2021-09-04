@@ -17,6 +17,8 @@ namespace API.Extensions
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
             services.AddScoped<IBlogRepository, BlogRepository>();
 
+            services.AddScoped<IUserRepository, UserRepository>();
+
             services.AddScoped<ITokenRepository, TokenRepository>();
 
             services.AddAutoMapper(typeof(Startup));
