@@ -1,11 +1,13 @@
 ﻿using API.DTOs;
 using API.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace API.Controllers
 {
+    [Authorize]
     public class UsersController : BaseApiController
     {
         private readonly IUserRepository _userRepository;

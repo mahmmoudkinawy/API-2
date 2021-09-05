@@ -66,7 +66,7 @@ namespace API.Data.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Tables");
+                    b.ToTable("Blogs");
                 });
 
             modelBuilder.Entity("API.Entities.Blog", b =>

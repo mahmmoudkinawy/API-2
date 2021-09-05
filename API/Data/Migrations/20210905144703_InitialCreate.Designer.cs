@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210904095254_AddedEmailColumn")]
-    partial class AddedEmailColumn
+    [Migration("20210905144703_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -68,7 +68,7 @@ namespace API.Data.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Tables");
+                    b.ToTable("Blogs");
                 });
 
             modelBuilder.Entity("API.Entities.Blog", b =>

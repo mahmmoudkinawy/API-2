@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API.Data.Migrations
 {
-    public partial class AddedRelationshipAndUpdatedColumns : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,8 @@ namespace API.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PasswordHash = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
-                    PasswordSalt = table.Column<byte[]>(type: "varbinary(max)", nullable: true)
+                    PasswordSalt = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -23,7 +24,7 @@ namespace API.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tables",
+                name: "Blogs",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -35,9 +36,9 @@ namespace API.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tables", x => x.Id);
+                    table.PrimaryKey("PK_Blogs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tables_Users_AppUserId",
+                        name: "FK_Blogs_Users_AppUserId",
                         column: x => x.AppUserId,
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -45,15 +46,15 @@ namespace API.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tables_AppUserId",
-                table: "Tables",
+                name: "IX_Blogs_AppUserId",
+                table: "Blogs",
                 column: "AppUserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Tables");
+                name: "Blogs");
 
             migrationBuilder.DropTable(
                 name: "Users");
