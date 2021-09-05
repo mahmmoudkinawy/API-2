@@ -8,7 +8,7 @@ namespace API.Profiles
     {
         public AutoMapperProfiles()
         {
-
+            CreateMap<BlogCreateDto, Blog>().ReverseMap();
             CreateMap<Blog, BlogDto>();
             CreateMap<AppUser, MemberDto>();
         }
