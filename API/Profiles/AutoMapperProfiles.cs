@@ -1,4 +1,5 @@
 ﻿using API.DTOs;
+using API.DTOs.Users;
 using API.Entities;
 using AutoMapper;
 
@@ -8,9 +9,10 @@ namespace API.Profiles
     {
         public AutoMapperProfiles()
         {
-            CreateMap<BlogCreateDto, Blog>().ReverseMap();
+            CreateMap<BlogCreateDto, Blog>();
             CreateMap<Blog, BlogDto>();
             CreateMap<AppUser, MemberDto>();
+            CreateMap<RegisterDto, AppUser>();
         }
     }
 }

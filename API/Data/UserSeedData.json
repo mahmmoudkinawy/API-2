@@ -1,7 +1,9 @@
 [
   {
     "UserName": "kino",
-    "Email" : "kino@gmail.com",
+    "Email": "kino@gmail.com",
+    "FirstName": "Mahmmoud",
+    "LastName": "Kinawy",
     "Blogs": [
       {
         "Title": "It and supplies 1",
@@ -23,6 +25,8 @@
   {
     "UserName": "Khokha",
     "Email": "khokha@gmail.com",
+    "FirstName": "Khloud",
+    "LastName": "Hisham",
     "Blogs": [
       {
         "Title": "With it same on one 1",

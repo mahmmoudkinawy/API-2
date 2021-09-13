@@ -1,22 +1,15 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 
 namespace API.Entities
 {
-    public class AppUser
+    public class AppUser : IdentityUser<int>
     {
-        [Key]
-        public int Id { get; set; }
-
-        public string UserName { get; set; }
-
-        public byte[] PasswordHash { get; set; }
-
-        public byte[] PasswordSalt { get; set; }
-
-        public string Email { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
         //Relationship one to many === AppUser to Blogs
         public ICollection<Blog> Blogs { get; set; }
+        public ICollection<AppUserRole> UserRoles { get; set; }
     }
 }

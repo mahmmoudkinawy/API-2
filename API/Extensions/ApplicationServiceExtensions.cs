@@ -16,7 +16,7 @@ namespace API.Extensions
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
             
-            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IBlogRepository, BlogRepository>();
 
             services.AddScoped<ITokenRepository, TokenRepository>();
 
